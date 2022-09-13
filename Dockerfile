@@ -10,6 +10,8 @@ RUN curl -sf https://gobinaries.com/tj/node-prune | sh
 
 COPY ui/ .
 
+RUN sed -i "s/<span>OhMyForm</span>//g" components/omf.tsx
+RUN sed -i "s/fork & Support!//g" components/omf.tsx
 RUN yarn install --frozen-lockfile
 RUN yarn build
 
